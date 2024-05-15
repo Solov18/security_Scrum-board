@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <title>Страница пользователя</title>
+</head>
+<body>
+<div th:if="${#authorization.expression('hasRole(''ADMIN'')')}">
+  <h1>Добро пожаловать, администратор!</h1>
+  <!-- Здесь отображается информация для администратора -->
+</div>
+<div th:if="${#authorization.expression('hasRole(''MANAGER'')')}">
+  <h1>Добро пожаловать, менеджер!</h1>
+  <!-- Здесь отображается информация для менеджера -->
+</div>
+<div th:if="${#authorization.expression('hasRole(''ZAMER'')')}">
+  <h1>Добро пожаловать, замерщик!</h1>
+  <!-- Здесь отображается информация для замерщика -->
+</div>
+</body>
+</html>
